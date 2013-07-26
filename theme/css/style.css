@@ -1,10 +1,36 @@
 body {
-	padding-top: 10px;
+	padding-top: 60px;
 	padding-bottom: 40px;
 }
 
 .sidebar-nav {
 	padding: 9px 0;
+}
+
+.navbar .brand { 
+	margin-top: 10px !important;
+	margin-left: 5px !important;
+	color: White !important;
+	text-shadow: none !important;
+}
+
+.btn-navbar {
+	margin-top: 10px !important;
+}
+
+.navbar-inner {
+	background: #394755 !important;
+}
+
+.navbar-link {
+	color: white !important;
+	font-size: 16px !important;
+	margin: 10px 0 10px 10px !important;
+	padding-right: 0px !important;
+}
+
+.navbar-link:hover {
+	color: white;
 }
 
 @media (max-width: 980px) {

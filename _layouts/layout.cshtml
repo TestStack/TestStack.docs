@@ -41,7 +41,7 @@
             if (pathPage.Url.ToLower().EndsWith("index.html"))continue;
 			sb.Append(indent);
 			sb.Append("    ");
-			sb.Append("<li style=\"margin-left: 20px\"");
+			sb.Append("<li style=\"margin-left: " + (level - 1) * 20 +"px\"");
 			if (pathPage.Url.ToLower() == context.Page.Url.ToLower())
 				sb.Append(" class=\"active\"");
 			sb.Append(">");
@@ -70,8 +70,7 @@
         <title>@Model.Title</title>
 
         <link href="/theme/css/style.css" rel="stylesheet">
-        <link href="/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/theme/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
             <!--[if lt IE 9]>
@@ -80,13 +79,32 @@
 
     </head>
     <body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="navbar-inner">
+			<div class="container-fluid">
+			  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+				<a class="brand" href="/">TestStack Documentation</a>
+				  <div class="nav-collapse collapse pull-right">
+				  <ul class="nav">
+					  <li><a href="https://github.com/TestStack" class="navbar-link" target="_blank">TestStack on GitHub</a></li>
+					  <li><a href="https://github.com/TestStack/TestStack.docs" class="navbar-link" target="_blank">Contribute to Docs</a></li>
+					</ul>
+				  </div><!--/.nav-collapse -->
+				</div>
+			</div>
+		  </div>
+		</div>
+	
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
                     <div class="well sidebar-nav">
                         <ul class="nav nav-list">
                             <li class="nav-header">Contents</li>
-                            <li class="nav-header @(Model.Page.Url == "/index.html" ? " active" : string.Empty)"><a href="/">Home</a></li>
                             @Raw(WriteOutContents(Model, Model.Site.Pages.Where(p => !(p is NonProcessedPage)).OrderBy(p => p.Url), "/").Trim())
                         </ul>
                     </div><!--/.well -->
@@ -94,7 +112,7 @@
                 <div class="span9">
                     <div class="entry-container">
                         <div class="entry">
-                            <h1>@Model.Title</h1>
+                            <h1><a id="title">@Model.Title</a></h1>
                             <span class="postdate">@Model.Page.Date.ToString("d MMM, yyyy")</span>
                             <ul>
                                 @foreach (var tag in Model.Page.Tags)
@@ -131,7 +149,13 @@
         </div><!--/.fluid-container-->
 
         <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="theme/bootstrap/js/bootstrap.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var title = document.getElementById("title");
+				title.scrollIntoView(true);
+			});
+		</script>
     </body>
 </html>
 @* ReSharper restore Html.PathError *@
