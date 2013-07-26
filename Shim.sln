@@ -1,10 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sham", "_source\_site", "{F74001E8-C911-4A56-A200-7F6B85564035}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sham", "_site", "{F74001E8-C911-4A56-A200-7F6B85564035}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Release.AspNetCompiler.VirtualPath = "/"
-		Release.AspNetCompiler.PhysicalPath = "_source\_site"
+		Release.AspNetCompiler.PhysicalPath = "_site"
 		Release.AspNetCompiler.TargetPath = "shim"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
