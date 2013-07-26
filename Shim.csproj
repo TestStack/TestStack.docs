@@ -28,6 +28,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
-    <Exec Command="pretzel.exe bake" />
+    <Exec Command="pretzel.exe bake _source" />
   </Target>
 </Project>

@@ -1,3 +1,3 @@
 @echo off
 
-"%~dp0\pretzel.exe" taste "%~dp0\"
+"%~dp0\pretzel.exe" taste "%~dp0\_source"

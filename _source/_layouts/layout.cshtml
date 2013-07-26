@@ -112,7 +112,7 @@
                 <div class="span9">
                     <div class="entry-container">
                         <div class="entry">
-                            <h1><a id="title">@Model.Title</a></h1>
+                            <h1>@Model.Title</h1>
                             <span class="postdate">@Model.Page.Date.ToString("d MMM, yyyy")</span>
                             <ul>
                                 @foreach (var tag in Model.Page.Tags)
@@ -152,7 +152,7 @@
 		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$(function(){
-				var title = document.getElementById("title");
+				var title = $('.entry-container')[0];
 				title.scrollIntoView(true);
 			});
 		</script>
