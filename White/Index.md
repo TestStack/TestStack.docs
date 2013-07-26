@@ -1,5 +1,5 @@
 ---
 layout: layout
-title: TestStack.White Home
+title: White Home
 ---
 
