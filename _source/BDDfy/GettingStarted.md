@@ -1,6 +1,7 @@
 ---
 layout: layout
 title: Getting started with BDDfy
+order: 1
 ---
 
 Let's see BDDfy in action. I am going to use [Dan North's ATM sample](http://dannorth.net/introducing-bdd/) for this. I will copy his sample here for your convenience:
