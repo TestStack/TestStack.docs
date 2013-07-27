@@ -182,24 +182,24 @@ So far we have been calling <code>BDDfy()</code> with no arguments so you may wo
 ##FAQ
 These are some of the FAQ I have received for Method Name Conventions:
 
-###Should I have my methods in the right order?
+#####Should I have my methods in the right order?
 No you do not. BDDfy picks the methods based on the naming convention and regardless of where in the class they appear BDDfy runs and reports them in the right order.
 
 There is only one rare case where you need to put some of your methods in the right order and that is when you have multiple 'AndGiven' or 'AndWhen' or 'And' steps in which case BDDfy picks up the 'And' steps in the order they are written in the class.
 
-###How I can reuse some of the testing logic?
+#####How I can reuse some of the testing logic?
 You may achieve that through scenario inheritance or composition as you would in your business logic code. 
 
 When inheriting from a base class that has a few steps BDDfy picks the steps from your base classes as if they were in your scenario class. This is useful when you have several scenarios that share a few steps. This way you put the shared steps in the base class and subclass that in your scenario classes.
 
 Using composition you may put the actual logic in a separate class and use them from your scenario classes. If you are using composition then you may want to consider the fluent API because it does just what you want. I will discuss them in another post in near future.
 
-###Why does not BDDfy pick up my base class methods?
+#####Why does not BDDfy pick up my base class methods?
 Because you should define them either as public or protected. BDDfy ignores the base class methods with private access modifier.
 
-###Can my step methods be static or should they be instance methods?
+#####Can my step methods be static or should they be instance methods?
 BDDfy handles both cases. So feel free to use whatever makes sense.
 
-###Where can I setup my mocks or other bits not directly related to the scenario?
+#####Where can I setup my mocks or other bits not directly related to the scenario?#####
 When unit testing you usually end up mocking a few interfaces and setting up a few things that are not necessarily related to the scenario under test; but are necessary for you to be able to test the scenario. I usually put this logic into the class constructor. If what you are setting up is directly related to the scenario then you should put the logic in your 'Given' step(s).
 
