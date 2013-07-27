@@ -1,6 +1,12 @@
-body {
-	padding-top: 80px;
-	padding-bottom: 40px;
+
+.menu-toggle {
+    display:run-in !important;
+    width=10px !important;
+    margin-right:10px !important;
+}
+
+.menu-toggle:hover {
+    color: black !important;
 }
 
 .sidebar-nav {
@@ -8,25 +14,25 @@ body {
 }
 
 .navbar .brand { 
-	margin-top: 10px !important;
-	margin-left: 5px !important;
-	color: White !important;
-	text-shadow: none !important;
+	margin-top: 10px;
+	margin-left: 5px;
+	color: White;
+	text-shadow: none;
 }
 
 .btn-navbar {
-	margin-top: 10px !important;
+	margin-top: 10px;
 }
 
 .navbar-inner {
-	background: #394755 !important;
+	background: #394755;
 }
 
 .navbar-link {
-	color: white !important;
-	font-size: 16px !important;
-	margin: 10px 0 10px 10px !important;
-	padding-right: 0px !important;
+	color: white;
+	font-size: 16px;
+	margin: 10px 0 10px 10px;
+	padding-right: 0px;
 }
 
 .navbar-link:hover {

@@ -9,8 +9,8 @@
 
     static string WriteOutContents(PageContext context, IEnumerable<Page> pages, string path)
     {
-		var level = path.Count(c=>c=='/');
-		var indent = string.Empty.PadLeft(((level - 1) * 4)) + "                        ";
+        var level = path.Count(c=>c=='/');
+        var indent = string.Empty.PadLeft(((level - 1) * 4)) + "                        ";
         var sb = new StringBuilder();
         var allPagesUnderPath = pages
             .Where(p => p.Url.StartsWith(path))
@@ -21,37 +21,48 @@
             .ToArray();
         var pathDirectories = allPagesUnderPath
             .Except(pathPages)
-			.Select(p => p.Url.Substring(path.Length).Split(new[] {"/"}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault())
+            .Select(p => p.Url.Substring(path.Length).Split(new[] {"/"}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault())
             .Where(s => !string.IsNullOrEmpty(s))
             .Distinct();
 
-		if (path != "/")
-		{
-			sb.Append(indent);
-            sb.Append("<li class=\"nav-header");
-			var indexPage = (path + "index.html").ToLower();
-			if (indexPage == context.Page.Url.ToLower())
-				sb.Append(" active");
-			sb.Append("\"><a href=\"" + indexPage + "\">");
-			sb.Append(path.TrimEnd('/').Split('/').Last());
-            sb.AppendLine("</a></li>");
-		}
-		foreach (var pathPage in pathPages.OrderBy(p=> p.Bag.ContainsKey("order") ? p.Bag["order"] : p.Title))
+        var headerTitle = path.TrimEnd('/').Split('/').Last();
+        var menuId = headerTitle.Replace(" ", string.Empty) + "Menu";
+
+        if (path != "/")
+        {
+            sb.Append(indent);
+            sb.Append("<li style=\"margin-left: " + (level - 2) * 10 +"px\" class=\"nav-header");
+            var indexPage = (path + "index.html").ToLower();
+            if (indexPage == context.Page.Url.ToLower())
+                sb.Append(" active");
+            sb.Append("\">");            
+            sb.Append("<a href=\"#\" class=\"menu-toggle\" data-toggle=\"collapse\" data-target=\"." + menuId + "\"><i class=\"icon-angle-down\"></i></a>");
+            sb.Append("<a href=\"" + indexPage + "\">");
+            sb.Append(headerTitle);
+            sb.Append("</a>");
+            sb.AppendLine("</li>");
+        }
+        foreach (var pathPage in pathPages.OrderBy(p=> p.Bag.ContainsKey("order") ? p.Bag["order"] : p.Title))
         {
             if (pathPage.Url.ToLower().EndsWith("index.html"))continue;
-			sb.Append(indent);
-			sb.Append("    ");
-			sb.Append("<li style=\"margin-left: " + (level - 1) * 20 +"px\"");
-			if (pathPage.Url.ToLower() == context.Page.Url.ToLower())
-				sb.Append(" class=\"active\"");
-			sb.Append(">");
+            var isSelected = pathPage.Url.ToLower() == context.Page.Url.ToLower();
+            var itemInLevelSelected = pathPages.Any(p=>p.Url.ToLower() == context.Page.Url.ToLower());
+            sb.Append(indent);
+            sb.Append("    ");
+            sb.Append("<li style=\"margin-left: " + (level - 1) * 20 +"px\" class=\"");
+            if (!itemInLevelSelected)
+                sb.Append("collapse ");
+            sb.Append(menuId);
+            if (isSelected)
+                sb.Append(" active");
+            sb.Append("\">");
             sb.Append(string.Format("<a href=\"{0}\">{1}</a>", pathPage.Url, pathPage.Title));
             sb.AppendLine("</li>");
         }
-		
+        
         foreach (var pathDirectory in pathDirectories)
         {
-			var newPath = path.TrimEnd('/') + "/" + pathDirectory + "/";
+            var newPath = path.TrimEnd('/') + "/" + pathDirectory + "/";
             sb.Append(WriteOutContents(context, allPagesUnderPath, newPath));
         }
         
@@ -69,8 +80,10 @@
 
         <title>@Model.Title</title>
 
+        <link href="/theme/css/default.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link href="/theme/css/style.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
             <!--[if lt IE 9]>
@@ -79,26 +92,26 @@
 
     </head>
     <body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-		  <div class="navbar-inner">
-			<div class="container-fluid">
-			  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-				<a class="brand" href="/">TestStack Documentation</a>
-				  <div class="nav-collapse collapse pull-right">
-				  <ul class="nav">
-					  <li><a href="https://github.com/TestStack" class="navbar-link" target="_blank">TestStack on GitHub</a></li>
-					  <li><a href="https://github.com/TestStack/TestStack.docs" class="navbar-link" target="_blank">Contribute to Docs</a></li>
-					</ul>
-				  </div><!--/.nav-collapse -->
-				</div>
-			</div>
-		  </div>
-		</div>
-	
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container-fluid">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="brand" href="/">TestStack Documentation</a>
+                  <div class="nav-collapse collapse pull-right">
+                  <ul class="nav">
+                      <li><a href="https://github.com/TestStack" class="navbar-link" target="_blank">TestStack on GitHub</a></li>
+                      <li><a href="https://github.com/TestStack/TestStack.docs" class="navbar-link" target="_blank">Contribute to Docs</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div>
+            </div>
+          </div>
+        </div>
+    
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
@@ -117,7 +130,7 @@
                             <ul>
                                 @foreach (var tag in Model.Page.Tags)
                                 {
-								<li><a href="/tag/@tag">@tag</a></li>
+                                <li><a href="/tag/@tag">@tag</a></li>
                                 }
                             </ul>
                             @Raw(Model.Content)
@@ -149,7 +162,7 @@
         </div><!--/.fluid-container-->
 
         <script src="http://code.jquery.com/jquery.js"></script>
-		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     </body>
 </html>
 @* ReSharper restore Html.PathError *@
