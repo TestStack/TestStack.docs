@@ -50,7 +50,7 @@
             sb.Append(indent);
             sb.Append("    ");
             sb.Append("<li style=\"margin-left: " + (level - 1) * 20 +"px\" class=\"");
-            if (!itemInLevelSelected)
+            if (!itemInLevelSelected && level != 1)
                 sb.Append("collapse ");
             sb.Append(menuId);
             if (isSelected)
@@ -80,10 +80,10 @@
 
         <title>@Model.Title</title>
 
-        <link href="/theme/css/default.css" rel="stylesheet">
+        <link href="/css/default.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href="/theme/css/style.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
             <!--[if lt IE 9]>
@@ -110,7 +110,6 @@
                 </div>
             </div>
           </div>
-        </div>
     
         <div class="container-fluid">
             <div class="row-fluid">
@@ -160,8 +159,8 @@
             </footer>
 
         </div><!--/.fluid-container-->
-
-        <script src="http://code.jquery.com/jquery.js"></script>
+        
+        <script src="//code.jquery.com/jquery.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     </body>
 </html>
