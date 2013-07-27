@@ -19,14 +19,14 @@ TestStack uses a technique often referred to as "GitHub Flow". This doesn't excl
 Note, this is different to "Git Flow", and although many of the principles are the same, it's much much simpler.
 
 # Step 1 - Fork the repository
-![Contributing1](Contributing_images\Contributing1.png)
+![Contributing1](img\Contributing1.png)
 
 Once you have your fork, you are free to commit and do whatever you want on your fork. The next step is to *clone* your fork.
 
 # Step 2 - Clone your fork
 Open up your Git command line, then type `git clone <repourl>`, you can get the repo url from GitHub, on the right side under the menus, look for this
 
-![Contributing2](Contributing_images\Contributing2.png)
+![Contributing2](img\Contributing2.png)
 
 Just click the copy button, then paste the repo url into the command line. So now you should have the repository cloned, next step is to make sure you can keep your repository up to date.
 
@@ -44,7 +44,7 @@ To fetch new changes, just run `git fetch upstream`. This pulls all the branches
 # Step 4 - Pick an Issue
 Now you are all setup, you need to pick an issue! If you are just getting started, don't worry. All of TestStack projects will have a collection of 'Jump In' tasks, these are small tasks which are great for people wanting to knock something off quickly, or get started with the code base. Feed free to ask for help along the way!
 
-![Contributing3](Contributing_images\Contributing3.png)
+![Contributing3](img\Contributing3.png)
 
 Once you have picked an issue, post to say you are working on this issue. Also if you end up not completing the work, PLEASE say you are no longer working on this issue, so someone else can pick it up.
 
@@ -93,14 +93,14 @@ To submit your pull request, you need to push your branch up to your fork.
 
 If you refresh your fork on github, you should see your new branch:
 
-![Contributing4](Contributing_images\Contributing4.png)
+![Contributing4](img\Contributing4.png)
 
 Click Compare & pull request. Put a decent description, and reference any issues this pull request might be fixing by just typing #<issueNumber> or #15 in the comment box. Then click 'Send pull request`
 
-![Contributing5](Contributing_images\Contributing5.png)
+![Contributing5](img\Contributing5.png)
 
 If you do not see a nice green merge button like this one:
-![Contributing6](Contributing_images\Contributing6.png)
+![Contributing6](img\Contributing6.png)
 Then you likely have a merge conflict because your local branch has got behind the main repository.
 
 You have two options
