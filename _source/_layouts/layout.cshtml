@@ -36,7 +36,7 @@
 			sb.Append(path.TrimEnd('/').Split('/').Last());
             sb.AppendLine("</a></li>");
 		}
-		foreach (var pathPage in pathPages)
+		foreach (var pathPage in pathPages.OrderBy(p=> p.Bag.ContainsKey("order") ? p.Bag["order"] : p.Title))
         {
             if (pathPage.Url.ToLower().EndsWith("index.html"))continue;
 			sb.Append(indent);

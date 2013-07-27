@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: layout
 title: Actions and Locators
-date: 2013-07-03
+order: 3
 ---
 
 Page Objects tend to either perform actions or find items on the page. Seleno Page Objects provide a number of Actions and Locators that you can use.

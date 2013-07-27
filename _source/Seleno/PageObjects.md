@@ -1,7 +1,7 @@
 ---
 layout: layout
 title: Page Objects
-date: 2013-07-02
+order: 1
 ---
 
 Seleno supports the idea of [Page Objects](https://code.google.com/p/selenium/wiki/PageObjects) to model your web pages. The idea is to model each page (or part of a page) as a class, and then to use instances of those classes in your tests. To continue, with the google example, we're all familiar with this page.

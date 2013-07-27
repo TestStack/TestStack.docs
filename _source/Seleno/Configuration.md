@@ -1,7 +1,7 @@
 ---
 layout: layout
 title: Seleno Configuration
-date: 2013-07-01
+order: 2
 ---
 
 The simplest possible configuration to start using Seleno is just one line. If you are using an ASP.NET web application within the same solution as your test project then all Seleno needs to know is the name of the web project to test and the port number to run it on. You need to provide it with this information before you run any Seleno tests so, if you were using NUnit, for example, you might configure Seleno in the SetUpFixture.
