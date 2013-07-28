@@ -9,6 +9,7 @@ Why Git and GitHub? Git is the leading distributed version control systems. All 
 
 Why GitHub? The community around GitHub, including the fantastic service itself and the way they're embracing and encouraging open source software makes it ideal to work with.
 
+## Installing Git?
 If you need help Installing Git, you can use one of the following sources:
 
 [https://help.github.com/articles/set-up-git](https://help.github.com/articles/set-up-git)  
@@ -18,12 +19,15 @@ TestStack uses a technique often referred to as "GitHub Flow". This doesn't excl
 
 Note, this is different to "Git Flow", and although many of the principles are the same, it's much much simpler.
 
-# Step 1 - Fork the repository
+# Contributing to TestStack projects
+This is a general contribution guide. For more information about how to edit the documentation specifically, see [http://jake.ginnivan.net/documentation-site-with-pretzel](http://jake.ginnivan.net/documentation-site-with-pretzel)
+
+## Step 1 - Fork the repository
 ![Contributing1](img\Contributing1.png)
 
 Once you have your fork, you are free to commit and do whatever you want on your fork. The next step is to *clone* your fork.
 
-# Step 2 - Clone your fork
+## Step 2 - Clone your fork
 Open up your Git command line, then type `git clone <repourl>`, you can get the repo url from GitHub, on the right side under the menus, look for this
 
 ![Contributing2](img\Contributing2.png)
@@ -32,7 +36,7 @@ Just click the copy button, then paste the repo url into the command line. So no
 
 But first we need to change directories into our newly cloned repository. `cd <reponame>`
 
-# Step 3 - Adding a remote
+## Step 3 - Adding a remote
 A convention in Github flow is to call the main repository `upstream`. So lets create an upstream remote
 
 `git remote add upstream <masterrepository>`
@@ -41,14 +45,14 @@ Just like the step above, go back to the main repository then copy it's url and 
 
 To fetch new changes, just run `git fetch upstream`. This pulls all the branches from upstream down into your local repository, but DOES NOT CHANGE your working directory.
 
-# Step 4 - Pick an Issue
+## Step 4 - Pick an Issue
 Now you are all setup, you need to pick an issue! If you are just getting started, don't worry. All of TestStack projects will have a collection of 'Jump In' tasks, these are small tasks which are great for people wanting to knock something off quickly, or get started with the code base. Feed free to ask for help along the way!
 
 ![Contributing3](img\Contributing3.png)
 
 Once you have picked an issue, post to say you are working on this issue. Also if you end up not completing the work, PLEASE say you are no longer working on this issue, so someone else can pick it up.
 
-# Step 5 - Start working
+## Step 5 - Start working
 The next step is to start working. First things first, make sure your `master` branch is up to date.
 **NOTE** Never commit to master, your master should always be clean. Keeping master clean will make everything much easier
 
@@ -61,7 +65,7 @@ Now our master is up to date, we can create a *feature branch*.
 
 Now you can start working, try and keep your commits small. You don't have to be finished the feature to commit, as soon as you have hit any sort of logical checkpoint, commit.
 
-## Committing
+### Committing
 When you have changed files, you first have to *stage* your changes before they can be committed. You can do this with the `add` command.
 
 To stage all adds (new files) and modifications, you can type `git add .` in the root of your repository. If you would like to include deletes as well, type `git add -A`, or you can stage files individually with `git add [filename]`, posh-git gives tab completion on files which is very handy.
@@ -70,7 +74,7 @@ Once you have staged your changes, commit them
 
 `git commit -m "your commit message"`
 
-# Step 6 - Submitting a pull request
+## Step 6 - Submitting a pull request
 Now we need to get your changes back into the main repository, this is done via a pull request. A pull request is exactly what the title says, it is a *request* to merge your changes into the repository. 
 There are a number of things which will help make your pull request successful
 
@@ -105,7 +109,7 @@ Then you likely have a merge conflict because your local branch has got behind t
 
 You have two options
 
-## Option 1 - Merge upstream (safest option)
+### Option 1 - Merge upstream (safest option)
 Go back to the command line, and type `git fetch upstream`, then `git merge upstream/master`
 
 This will merge the latest changes into your local branch, then you can `git push origin MyFeature` and your pull request will automatically be updated with your latest merge commit.
