@@ -46,3 +46,19 @@ UIItems can be searched based on a lot of parameters. For more look here: UIItem
 
 ## Architecture
 ![Index1](../img/White/Index1.png)
+
+## Silverlight Support
+You would need to add reference to white.webbrowser.dll along with TestStack.White.dll.
+
+	InternetExplorerWindow  browserWindow = InternetExplorer.Launch("http://localhost/white.testsilverlight/TestSilverlightApplicationTestPage.aspx", "FooApp Title - Windows Internet Explorer");
+	SilverlightDocument document = browserWindow.SilverlightDocument;
+	Button button = document.Get<Button>("buton");
+	Label label = document.Get<Label>("status");
+
+//...so on. The objects Button, Label etc behave the same way as for WinForm/WPF etc.
+Please look at the rest of the documentation to understand other aspects of white. This shows what you need to do extra to use Silverlight.
+
+
+**NOTE:** Silverlight support is not tested, and likely has many issues. I am considering dropping Silverlight support unless **members of the Community improve test coverage** of the Silverlight support in White  
+   
+ I recommend checking out Coded UI for Silverlight [http://timheuer.com/blog/archive/2010/11/24/coded-ui-available-for-silverlight-4.aspx](http://timheuer.com/blog/archive/2010/11/24/coded-ui-available-for-silverlight-4.aspx)
