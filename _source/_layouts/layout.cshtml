@@ -42,7 +42,7 @@
             sb.Append("</a>");
             sb.AppendLine("</li>");
         }
-        foreach (var pathPage in pathPages.OrderBy(p=> p.Bag.ContainsKey("order") ? p.Bag["order"] : p.Title))
+        foreach (var pathPage in pathPages.OrderBy(p=> p.Bag.ContainsKey("order") ? int.Parse(p.Bag["order"].ToString()) : 0).ThenBy(t=>t.Title))
         {
             if (pathPage.Url.ToLower().EndsWith("index.html"))continue;
             var isSelected = pathPage.Url.ToLower() == context.Page.Url.ToLower();
