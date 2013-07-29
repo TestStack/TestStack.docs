@@ -31,6 +31,24 @@ Implement the interface White.Core.Configuration.IWaitHook.
 Implement the WaitFor method in it to wait for as long as your test requires. White passed in the UIItemContainer (most of the time this is just the window) object to provide the context of call. e.g. you can wait till you can find a UI Item in this container.
 Set the wait hook by setting CoreAppXmlConfiguration.Instance.AdditionalWaitHook value
 
+A note on the custom wait hook:
+
+For the hook to work CoreAppXmlConfiguration.Instance.AdditionalWaitHook has to be set to the object implementing the IWaitHook interface, e.g:
+
+	public class CustomWait : IWaitHook
+	{
+		public CustomWait()
+		{
+			CoreAppXmlConfiguration.Instance.AdditionalWaitHook = this;
+		}
+		
+		// Implementation of the IWaitHook interface
+		public void WaitFor(UIItemContainer uiItemContainer)
+		{
+			...
+		}
+	}
+
 **Note:** IWaitHook is quite heavy handed, it checks after every action (which for a single logical action, there may be multiple internal actions). This can make it rather slow. See the next section for some other techniques
 
 ## Handling asynchronous/background work (WPF)
