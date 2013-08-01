@@ -13,7 +13,7 @@ Run `Fix-WhiteNamespaces` in the nuget powershell console to automatically fix u
 ### Documentation Site 
 Documentation available at [http://teststack.azurewebsites.net/](http://teststack.azurewebsites.net/)
 
- - **Enhancement**: x64 Support added. You can not compile your project as AnyCPU!
+ - **Enhancement**: x64 Support added. You can now compile your project as AnyCPU!
  - **Enhancement**: Improved API of Slider
  - **Enhancement**: Better Custom controls support for WPF
  - **Fixed**: Cannot find multiline textbox in Win32 apps
