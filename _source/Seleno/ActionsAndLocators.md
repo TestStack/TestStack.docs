@@ -39,15 +39,15 @@ Finds Selenium IWebElement items on the page, using the Selenium By selectors or
     return Find().Element(By.jQuery(selector), WaitInSecondsUntilElementAvailable);
 
 # Navigation #
-A great way to slow down your tests is to start each test on the home page and then navigate to the page you want to test! It's much better to navigate directly to the page that you want to test. You can do this by calling the NavigateToInitialPage method on SelenoHost and passing in the *relative* URL (to the root of the site being tested).
+A great way to slow down your tests is to start each test on the home page and then navigate to the page you want to test! It's much better to navigate directly to the page that you want to test. You can do this by calling the NavigateToInitialPage method on SelenoHost instance and passing in the *relative* URL (to the root of the site being tested) or an absolute URL.
 
-    var page = SelenoHost.NavigateToInitialPage<RegisterPage>("/Account/Register");
+    var page = <AnInstanceOfSelenoHost>.NavigateToInitialPage<RegisterPage>("/Account/Register");
 
 In addition, if you are using ASP.NET MVC then you can also use strongly typed controller action expressions to navigate to the page via routing. 
 
-    var page = SelenoHost.NavigateToInitialPage<AccountController, RegisterPage>(x => x.Register());
+    var page = <AnInstanceOfSelenoHost>.NavigateToInitialPage<AccountController, RegisterPage>(x => x.Register());
 
 If you are using these MVC expressions, just remember to register the application routes when you are initializing Seleno.
 
-    SelenoHost.Run("MvcMusicStore", 12345);
+    <AnInstanceOfSelenoHost>.Run("MvcMusicStore", 12345);
     MvcApplication.RegisterRoutes(RouteTable.Routes); 
