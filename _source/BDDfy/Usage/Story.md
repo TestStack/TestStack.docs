@@ -1,7 +1,7 @@
 ---
 layout: layout
 title: Story
-order: 3
+order: 2
 ---
 
 In this post we will discuss how you can add story support to your BDD behaviors. As mentioned before and as we saw in the post about [Method Name Conventions](/BDDfy/MethodNameConventions.html) BDDfy does not force you to use stories. This could be quite useful for teams that do not work in an Agile environment. Forcing developers to come up with a story definition, while I believe is useful in many cases, could be less than optimal in some situations. For this reason you can `BDDfy` a scenario without associating it with a story; but that is more of an exception than a rule. So let's see how you can create stories and associate them with some scenarios.

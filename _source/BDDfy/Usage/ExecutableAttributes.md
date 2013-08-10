@@ -1,7 +1,7 @@
 ---
 layout: layout
 title: Executable Attributes
-order: 4
+order: 3
 ---
 
 Before I start I should mention that this post is going to look rather similar to the one about [Method Name Conventions](/BDDfy/MethodNameConventions.html) because these two methods are similar in nature. Also the samples provided in this post are by no means perfect BDD samples and are used only to demonstrate the API usage.
