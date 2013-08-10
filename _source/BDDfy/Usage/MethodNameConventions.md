@@ -1,7 +1,7 @@
 ---
 layout: layout
 title: Method Name Conventions
-order: 2
+order: 1
 ---
 
 BDDfy can scan your tests in one of two ways: using Reflective API and Fluent API.  Reflective API uses some hints to scan your classes and afterwards pretty much all the burden is on BDDfy's shoulders to find your steps, make sense of them and execute them in order. You can provide these hints in two ways: using method name conventions and/or attributes. For this post we will only concentrate on method name conventions. 

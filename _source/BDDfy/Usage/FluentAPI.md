@@ -1,7 +1,7 @@
 ---
 layout: layout
 title: Fluent API
-order: 5
+order: 4
 ---
 
 BDDfy can scan your tests in one of two ways: using Reflective API and Fluent API.  Reflective API uses some hints to scan your classes. These hints are provided through [Method Name Conventions](/BDDfy/method-name-conventions.html) and/or `[ExecutableAttribute][/BDDfy/executable-attributes.html]` which we have discussed before. For this post we will concentrate on Fluent API. 
