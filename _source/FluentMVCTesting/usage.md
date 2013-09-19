@@ -8,7 +8,7 @@ Examples
 
 ### Recommended class structure
 
-The following code snippet is an example for how to set up a test class to use FluentMVCTesting using NUnit, this is simply to get you started quickly, in reality you can use it how you like and with any unit testing framework of your choice.
+The following code snippet is an example for how to set up a test class to use FluentMVCTesting using NUnit. This is simply to get you started quickly; in reality you can use it how you like and with any unit testing framework of your choice.
 
     using MyApp.Controllers;
     using NUnit.Framework;
@@ -172,7 +172,7 @@ If you assert that the action returns a view of some sort there are some other m
     _controller.WithCallTo(c => c.Index()).ShouldRenderDefaultView()
         .WithModel(expectedModel);
 
-    // Check that the model that was return passes a predicate
+    // Check that the model that was returned passes a predicate
     _controller.WithCallTo(c => c.Index()).ShouldRenderDefaultView()
         .WithModel<ModelType>(m => m.Property1 == "hello");
 
