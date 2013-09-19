@@ -1,8 +1,3 @@
----
-layout: layout
-title: ConventionTests
----
-
 ## What is ConventionTests?
 
 Convention over Configuration is a great way to cut down repetitive boilerplate code. But how do you validate that your code adheres to your conventions? Convention Tests is a code-only NuGet that provides a simple API to build validation rules for convention validation tests.
@@ -44,4 +39,12 @@ When you run this convention, if it fails an exception will be thrown, which wil
 
 How cool is that!
 
-Also, if you look in the directory where your test assembly is, there will be an html report called `Conventions.htm`, this will list all your projects conventions and serve as living documentation!
+### Reporting
+If you would like to use ConventionTests reporting features, you just have to opt in by specifying the reporter you want. This makes it easy to add your own reporters, for example a WikiReporter may be better than the `HtmlReporter`
+
+In your `Properties\AssemblyInfo.cs` file add the reporters you want. This are global reporters which will report the results of all conventions.
+
+    [assembly: ConventionReporter(typeof(HtmlConventionResultsReporter))]
+    [assembly: ConventionReporter(typeof(MarkdownConventionResultsReporter))]
+
+Then if you look in the directory where your test assembly is, there will be an html report called `Conventions.htm`, serving as living documentation!
