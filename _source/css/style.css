@@ -20,6 +20,10 @@
 	text-shadow: none;
 }
 
+.nav li {
+	font-size: 11px;
+}
+
 .btn-navbar {
 	margin-top: 10px;
 }
