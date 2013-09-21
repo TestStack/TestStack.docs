@@ -1,6 +1,13 @@
+---
+
+layout: layout
+
+title: ConventionTests
+---
+
 ## What is ConventionTests?
 
-Convention over Configuration is a great way to cut down repetitive boilerplate code. But how do you validate that your code adheres to your conventions? Convention Tests is a code-only NuGet that provides a simple API to build validation rules for convention validation tests.
+Convention over Configuration is a great way to cut down repetitive boilerplate code. But how do you validate that your code adheres to your conventions? Convention Tests project provides a simple API to build validation rules for convention validation tests.
 
 ## Getting Started
 It is really easy to get started with Convention Tests, we have included a bunch of conventions out of the box. The included conventions are:

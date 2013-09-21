@@ -14,15 +14,14 @@ In Seleno, you would model this page by inheriting from the Page class and then 
     {
         public SearchPage InputSearchTerm(string term)
         {
-            Find()
-                .Element(By.Name("q"))
+            Find.Element(By.Name("q"))
                 .SendKeys(term);
             return this;
         }
 
         public ResultsPage Search()
         {
-            return Navigate().To<ResultsPage>(By.Name("btnG"));
+            return Navigate.To<ResultsPage>(By.Name("btnG"));
         }
     }
 
@@ -73,8 +72,8 @@ That's quite nice, but things start to get really interesting if you use view mo
     {
         public HomePage CreateValidUser(RegisterModel model)
         {
-            Input().Model(model);
-            return Navigate().To<HomePage>(By.CssSelector("input[type='submit']"));
+            Input.Model(model);
+            return Navigate.To<HomePage>(By.CssSelector("input[type='submit']"));
         }
     }
 
