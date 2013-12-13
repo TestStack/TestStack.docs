@@ -7,4 +7,4 @@ Contributions welcome, see [Contributing to TestStack](http://teststack.azureweb
 
 To get started with Docs, just clone and run `RunDocs.cmd`, this will fire up a local web server and open the documentation site locally. Any changes you make will trigger a recompile of the documentation, so simply make changes, then refresh your browser to see them.
 
-Pull requests welcome!
+## Pull requests welcome!
