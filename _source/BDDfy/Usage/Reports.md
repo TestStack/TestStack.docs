@@ -43,299 +43,58 @@ The Diagnostics Report is the most recent addition to the BDDfy stable. It is al
 
 The Diagnostics Report is created in the JSON format. This is useful if you want to load the data into another system, perhaps to persist test runs to compare performance over time.  The Diagnostics Report is output to the bin directory of the test project and is named Diagnostics.json. Here is the output for the ATM tests.
 
-    {
-        "Stories":
-        [
-            {
-                "Name":"Account holder withdraws cash",
-                "Duration":0,
-                "Scenarios":
-                [
-                    {
-                        "Name":"Account has insufficient fund",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the Account Balance is $10",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the Card is valid",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the machine contains enough money",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"When the Account Holder requests $20",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the ATM should not dispense any Money",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the ATM should say there are Insufficient Funds",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the Account Balance should be $20",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the Card should be returned",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Account has sufficient fund",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the account balance is $100",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the Card is valid",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the machine contains enough money",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"When the account holder requests $20",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the ATM should dispense $20",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the account balance should be $80",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the card should be returned",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Card has been disabled",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the Card is disabled",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"When the Account Holder requests 20",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then Card is retained",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"And the ATM should say the Card has been retained",
-                                "Duration":0
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Name":"Tic tac toe",
-                "Duration":0,
-                "Scenarios":
-                [
-                    {
-                        "Name":"Cat\u0027s game",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, O, X\r\nO, O, X\r\nX, X, O",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then it should be a cats game",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Diagonal win",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, O, O\r\nX, O, X\r\nO, X,  ",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is O",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Horizontal win",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, X, X\r\nX, O, O\r\nO, O, X",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is X",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Horizontal win in the bottom",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, X,  \r\nX, O, X\r\nO, O, O",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is O",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Horizontal win in the middle",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, O, O\r\nX, X, X\r\nO, O, X",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is X",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"O wins",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the following board X, X, O, X, O,  ,  ,  ,",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"When the game is played at (2, 0)",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner should be O",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Vertical win in the left",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, O, O\r\nX, O, X\r\nX, X, O",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is X",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Vertical win in the middle",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\n , X, O\r\nO, X, O\r\nO, X, X",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is X",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"Vertical win in the right",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, O, X\r\nO, O, X\r\nO, X, X",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner is X",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"When x and o play their first moves",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given a new game",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"When X and O play on (0, 0), (2, 2)",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the board state should be X,  ,  ,  ,  ,  ,  ,  , O",
-                                "Duration":0
-                            }
-                        ]
-                    },
-                    {
-                        "Name":"X wins",
-                        "Duration":0,
-                        "Steps":
-                        [
-                            {
-                                "Name":"Given the board\r\nX, X, O\r\nX, X, O\r\nO, O,  ",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"When x plays in the bottom right",
-                                "Duration":0
-                            },
-                            {
-                                "Name":"Then the winner should be x",
-                                "Duration":0
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+	{
+	    "Stories":
+	    [
+	        {
+	            "Name":"Account holder withdraws cash",
+	            "Duration":8,
+	            "Scenarios":
+	            [
+	                {
+	                    "Name":"Account has insufficient fund",
+	                    "Duration":8,
+	                    "Steps":
+	                    [
+	                        {
+	                            "Name":"Given the Account Balance is $10",
+	                            "Duration":1
+	                        },
+	                        {
+	                            "Name":"And the Card is valid",
+	                            "Duration":0
+	                        },
+	                        {
+	                            "Name":"And the machine contains enough money",
+	                            "Duration":0
+	                        },
+	                        {
+	                            "Name":"When the Account Holder requests $20",
+	                            "Duration":0
+	                        },
+	                        {
+	                            "Name":"Then the ATM should not dispense any Money",
+	                            "Duration":5
+	                        },
+	                        {
+	                            "Name":"And the ATM should say there are Insufficient Funds",
+	                            "Duration":0
+	                        },
+	                        {
+	                            "Name":"And the Account Balance should be $20",
+	                            "Duration":0
+	                        },
+	                        {
+	                            "Name":"And the Card should be returned",
+	                            "Duration":0
+	                        }
+	                    ]
+	                }
+	            ]
+	        }
+	    ]
+	}
+
 
 ##Configuring Reports
 
@@ -365,16 +124,5 @@ Having processors run in a pipeline leads to some interesting possibilities. One
 
 This is really useful when you want to print out the reports as documentation but don’t want to have to wait for the tests to run.
 
-
-  [2]: https://github.com/TestStack/TestStack.BDDfy/tree/master/TestStack.BDDfy.Samples/Atm
-  [3]: http://nuget.org/packages/TestStack.BDDfy.Samples/
-  [4]: /get/blog_pictures/2013/02/bddfy-sample-test-driven-output.png
-  [5]: /get/blog_pictures/2013/02/bddfy-sample-test-driven-summary-output.png
-  [6]: /get/blog_pictures/2013/02/bddfy-sample-resharper-output.png
-  [7]: /get/blog_pictures/2013/02/bddfy-sample-resharper-exception-output.png
-  [8]: /get/blog_pictures/2013/02/bddfy-sample-atm-html.png
-  [9]: https://help.github.com/articles/github-flavored-markdown
-  [10]: /get/blog_pictures/2013/02/bddfy-sample-atm-markdown.png
-  [11]: http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
 
  

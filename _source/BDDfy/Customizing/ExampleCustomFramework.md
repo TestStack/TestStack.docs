@@ -1,6 +1,6 @@
 ---
 layout: layout
-title: Example - Custom Framework
+title: Example - Creating a custom framework
 order: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: layout
-title: Example - Unit Testing
+title: Example - Using BDDfy for unit testing
 order: 3
 ---
 
@@ -226,7 +226,7 @@ And this comes out very nicely on the report:
 ![BDDfy unit test report](/img/BDDfy/Customizing/bddfy-unit-test-report-2.png)
 
 
-You can find the code on [github](https://github.com/TestStack/TestStack.Seleno/tree/master/src/TestStack.Seleno.Tests/Specify). Please let me know what you think. It's still a work in progress...
+You can find the code on [github](https://github.com/TestStack/TestStack.Seleno/tree/master/src/TestStack.Seleno.Tests/Specify). 
 
 
 

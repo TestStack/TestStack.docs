@@ -19,7 +19,7 @@ Most of the BDDfy in Action series so far has covered the various Scanners, so I
 ![BDDfy scanners](/img/BDDfy/Customizing/bddfy-scanners.png)
 
 ### Story Scanner ###
-BDDfy creates a Story Scanner for each test object. This is the Scanner that actually scans the test object and turns it into a Story. It composes together the Story Metadata Scanner and the appropriate Scenario Scanner – [Fluent](http://www.mehdi-khalili.com/bddify-in-action/fluent-api) or [Reflective](http://www.mehdi-khalili.com/bddify-in-action/method-name-conventions). 
+BDDfy creates a Story Scanner for each test object. This is the Scanner that actually scans the test object and turns it into a Story. It composes together the Story Metadata Scanner and the appropriate Scenario Scanner – [Fluent](/BDDfy/Usage/FluentAPI.html) or [Reflective](/BDDfy/Usage/MethodNameConventions.html). 
 
 The Story Metadata Scanner gets information from the Story attribute, if one exists on the class.
 
