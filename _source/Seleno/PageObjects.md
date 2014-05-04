@@ -6,7 +6,7 @@ order: 1
 
 Seleno supports the idea of [Page Objects](https://code.google.com/p/selenium/wiki/PageObjects) to model your web pages. The idea is to model each page (or part of a page) as a class, and then to use instances of those classes in your tests. To continue, with the google example, we're all familiar with this page.
 
-![](http://michael-whelan.net/get/blog_pictures/seleno/google.png)
+![](/img/Seleno/google.png)
 
 In Seleno, you would model this page by inheriting from the Page class and then encapsulating the interaction with the page within methods. Seleno provides methods to find elements on the page (Find) and enter data into the text box (SendKeys). The Navigate method allows you to navigate to the results page by clicking on the Search button (btnG).
 
