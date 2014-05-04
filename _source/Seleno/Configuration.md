@@ -33,7 +33,9 @@ If you want to change these defaults, you can use a fluent configuration to over
 		    .UsingLoggerFactory(new ConsoleFactory())
     );
 
-> Note: To use the Chrome WebDriver you also need to download [ChromeDriver.exe](https://code.google.com/p/selenium/wiki/ChromeDriver) and make sure it is in your bin directory when you run your tests.
+> Note: To use the Chrome WebDriver you also need to download [ChromeDriver.exe](https://code.google.com/p/selenium/wiki/ChromeDriver) and make sure it is in your bin directory when you run your tests. Once you install the NuGet package you can also type `Install-ChromeDriver` into the NuGet package manager console and this will install the driver for you.
+
+
 
 There are more things that you can configure too. The original use case for Seleno was to test Visual Studio web projects for ASP.Net and ASP.Net MVC and it defaults to doing this with IIS Express. Seleno attempts to be modular and easy to customise though, so to test any website instead is just a matter of swapping out the IisExpressWebServer for the InternetWebServer. For example, to test Google UK:
 
