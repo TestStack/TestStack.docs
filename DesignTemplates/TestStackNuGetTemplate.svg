@@ -16,9 +16,9 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="TestStackNuGetTemplate.svg"
-   inkscape:export-filename="C:\dev\Community\Teststack\TestStack.docs\DesignTemplates\nugetlogo.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="C:\dev\Community\TestStack.docs\_source\img\logo.png"
+   inkscape:export-xdpi="17.578125"
+   inkscape:export-ydpi="17.578125">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -43,9 +43,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="211.69683"
-     inkscape:cy="69.588801"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="45.048108"
+     inkscape:cy="-89.426872"
      inkscape:document-units="px"
      inkscape:current-layer="layer4"
      showgrid="false"
@@ -110,34 +110,30 @@
      inkscape:label="ProductName">
     <rect
        style="fill:#00a300;fill-opacity:1;stroke:none"
-       id="rect3869-4-5-6"
+       id="rect3869-4-5-6-2"
        width="256"
        height="256"
        x="0"
        y="0"
        ry="0.52032524" />
-    <g
-       id="g3826-8-2-8"
-       style="fill:#ffffff;fill-opacity:1"
-       transform="matrix(3.501592,0,0,3.501592,365.57786,-2810.2804)">
-      <path
-         sodipodi:nodetypes="ccccccc"
-         inkscape:connector-curvature="0"
-         id="path3036-8-7-5"
-         d="m -53.431816,812.07214 12.392876,5.27036 0.127762,12.79944 -12.266608,-0.74898 -41.776553,2.88223 0,-8.90943 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:none" />
-      <path
-         sodipodi:nodetypes="ccccccc"
-         inkscape:connector-curvature="0"
-         id="path3036-1-2-6-7"
-         d="m -53.263354,866.18186 12.39287,-5.27036 0.12777,-12.79944 -12.26661,0.74898 -41.77656,-2.88223 0,8.90943 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:none" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3824-4-1-6"
-         d="m -41.037448,831.77012 -53.916891,1.95121 0.12868,11.01042 53.788211,1.81185 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:none" />
-    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 178.48145,27.264911 43.3948,18.45465 0.44737,44.81841 -42.95266,-2.62262 -146.284438,10.0924 0,-31.19719 z"
+       id="path3036-8-7-5-45"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 179.07134,228.73507 43.39477,-18.45465 0.4474,-44.81842 -42.95266,2.62263 -146.284468,-10.0924 0,31.19719 z"
+       id="path3036-1-2-6-7-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 221.88147,102.2392 -41.79609,-1.34169 -146.998858,8.17403 0.45058,38.554 147.336768,7.2164 41.0076,-0.87204 z"
+       id="path3824-4-1-6-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
