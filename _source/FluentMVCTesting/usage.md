@@ -139,10 +139,28 @@ Unfortunately, we couldn't think of a way to get rid of the magic strings here s
 See below for view model testing.
 
 ### Files
+    _controller.WithCallTo(c => c.Index()).ShouldRenderAnyFile();
+	_controller.WithCallTo(c => c.Index()).ShouldRenderAnyFile("content/type");
 
-    _controller.WithCallTo(c => c.Index()).ShouldRenderFile();
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileContents();
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileContents(new byte[] {1});
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileContents(new byte[] {1}, "content/type");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileContents("text");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileContents("text", "content/type");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileContents("text", "content/type", Encoding.Unicode);
 
-    _controller.WithCallTo(c => c.Index()).ShouldRenderFile("content/type");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream();
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream(new byte[] {1});
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream(new byte[] {1}, "content/type");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream(new MemoryStream());
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream(new MemoryStream(), "content/type");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream("text");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream("text", "content/type");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFileStream("text", "content/type", Encoding.Unicode);
+
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFilePath();
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFilePath("file name");
+	_controller.WithCallTo(c => c.Index()).ShouldRenderFilePath("file name", "content/type");
 
 ### Http status codes
 
