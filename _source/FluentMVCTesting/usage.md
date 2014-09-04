@@ -162,6 +162,10 @@ See below for view model testing.
 	_controller.WithCallTo(c => c.Index()).ShouldRenderFilePath("file name");
 	_controller.WithCallTo(c => c.Index()).ShouldRenderFilePath("file name", "content/type");
 
+It is useful to note that whilst file content is ultimately represented in memory as binary data, we enable you to test for textual content using convenience overloads. 
+
+In order achieve this - internally we reconstitute the text by assuming that the file content is UTF8 encoded. If you know our assumption to be wrong  then you must explicitly tell the test method the actual file content encoding by means of the apparent `encoding` argument as not to cause a misleading test failure. 
+
 ### Http status codes
 
     _controller.WithCallTo(c => c.Index()).ShouldGiveHttpStatus();
