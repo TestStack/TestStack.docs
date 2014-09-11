@@ -182,6 +182,13 @@ In order achieve this - internally we reconstitute the text by assuming that the
         Assert.That(data.SomeProperty, Is.EqualTo("SomeValue");
     });
 
+### Content
+
+	_controller.WithCallTo(c => c.Index()).ShouldReturnContent();
+    _controller.WithCallTo(c => c.Index()).ShouldReturnContent("expected content");
+    _controller.WithCallTo(c => c.Index()).ShouldReturnContent("expected content", "content/type");
+    _controller.WithCallTo(c => c.Index()).ShouldReturnContent("expected content", "content/type", Encoding.UTF8);
+
 ### Model tests
 
 If you assert that the action returns a view of some sort there are some other methods that you can call (seen easily using intellisense). These allow you to check the model, e.g.:
