@@ -189,6 +189,18 @@ In order achieve this - internally we reconstitute the text by assuming that the
     _controller.WithCallTo(c => c.Index()).ShouldReturnContent("expected content", "content/type");
     _controller.WithCallTo(c => c.Index()).ShouldReturnContent("expected content", "content/type", Encoding.UTF8);
 
+### TempData
+
+    _controller.Index();
+
+    _controller.ShouldHaveTempDataProperty("Message")
+    _controller.ShouldHaveTempDataProperty("Message", "Welcome to the website.")
+    _controller.ShouldHaveTempDataProperty<string>("Message", m => m.Contains("Welcome"))
+
+It is important to note that the compiler cannot infer the generic type argument based on the given lambda expression and so you must explicitly supply a generic type argument in all cases. 
+
+It may also be important to note that the temp data test methods break the convention slightly by defining test methods directly on the `Controller` instead of on the immediate result of `WithCallTo`. This is slightly counter-intuitive at first, but ultimately, it enables you to be more dynamic when writing your tests. 
+
 ### Model tests
 
 If you assert that the action returns a view of some sort there are some other methods that you can call (seen easily using intellisense). These allow you to check the model, e.g.:
