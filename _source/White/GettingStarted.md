@@ -21,23 +21,71 @@ order: 1
 ## Writing your first test
 
 ### Start off with an empty test stub
-	[Fact]
-	public void MyFirstUITest() { }
+
+In *MSTest*:
+
+    [TestClass]
+    public class MyTests
+    {
+        [TestMethod]
+        public void MyFirstUITest()
+        {
+        }
+    }
+
+In *NUnit*:
+
+    [TestFixture]
+    public class MyTests
+    {
+       	[Test]
+      	public void MyFirstUITest()
+       	{
+       	}
+    }
+
+In *xUnit*:
+
+    public class MyTests
+    {
+    	[Fact]
+        public void MyFirstUITest()
+        {
+        }
+    }
 
 ### Get hold of a window
-	Application application = Application.Launch("foo.exe");  
-	Window window = application.GetWindow("bar", InitializeOption.NoCache);
+First you need to determine the correct path of the application you want to test. 
+
+In *MSTest*: 
+
+    var applicationDirectory = TestContext.TestDeploymentDir
+
+In *NUnit*: 
+
+    var applicationDirectory = TestContext.CurrentContext.TestDirectory;
+
+Then you create a new instance of your application
+
+    var applicationPath = Path.Combine(applicationPath, "foo.exe");
+    Application application = Application.Launch(applicationPath);  
+    Window window = application.GetWindow("bar", InitializeOption.NoCache);
 
 White uses the UI Automation API (UIA) to find controls on a window. UIA communicates to a displayed window via window messages. This find is performed by iterating through all the controls in a window.
 
 ### Finding a UI Item and performing action
-	Button button = window.Get<Button>("save");
-	button.Click();
+
+    Button button = window.Get<Button>("save");
+    button.Click();
 
 ### Finding a UIItem based on SearchCriteria
-	SearchCriteria searchCriteria =     SearchCriteria.ByAutomationId("name").AndControlType(typeof(TextBox)).AndIndex(2);
-	TextBox textBox = (TextBox) window.Get(searchCriteria);
-	textBox.Text = "Anil";
+
+    SearchCriteria searchCriteria = SearchCriteria
+        	.ByAutomationId("name")
+        	.AndControlType(typeof(TextBox))
+        	.AndIndex(2);
+    TextBox textBox = (TextBox) window.Get(searchCriteria);
+    textBox.Text = "Anil";
 
 ## Reporting Issues
 When reporting issues please include the following information:
@@ -46,5 +94,4 @@ When reporting issues please include the following information:
  - The version of White you are using
  - [Recommended] A failing test! **or**
  - [Recommended] A Gist with the code which is failing
- - 
-The more information the better, we accept pull requests with failing tests and pull requests which fix the issue too!
+ - The more information the better, we accept pull requests with failing tests and pull requests which fix the issue too!
