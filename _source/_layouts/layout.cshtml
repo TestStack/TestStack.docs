@@ -36,9 +36,10 @@
             if (indexPage == context.Page.Url.ToLower())
                 sb.Append(" active");
             sb.Append("\">");            
-            sb.Append("<a href=\"#\" class=\"menu-toggle\" data-toggle=\"collapse\" data-target=\"." + menuId + "\"><i class=\"icon-angle-down\"></i></a>");
+            sb.Append("<a href=\"#\" class=\"menu-toggle\" data-toggle=\"collapse\" data-target=\"." + menuId + "\"><i class=\"icon-angle-down\"></i>");
             sb.Append("<a href=\"" + indexPage + "\">");
             sb.Append(headerTitle);
+            sb.Append("</a>");
             sb.Append("</a>");
             sb.AppendLine("</li>");
         }

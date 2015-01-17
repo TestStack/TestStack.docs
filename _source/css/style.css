@@ -1,12 +1,11 @@
+.nav-header.active a {
+    color: white;
+}
 
 .menu-toggle {
     display:run-in !important;
     width=10px !important;
     margin-right:10px !important;
-}
-
-.menu-toggle:hover {
-    color: black !important;
 }
 
 .sidebar-nav {
